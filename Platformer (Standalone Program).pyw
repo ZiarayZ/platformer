@@ -1,5 +1,4 @@
 from random import randint,choice
-from time import sleep
 import pygame
 import os
 
@@ -496,5 +495,3 @@ while secondRunning:
     pygame.display.flip()
     
 pygame.quit()#Close the game
-print("Thanks for Playing!")
-sleep(5)
