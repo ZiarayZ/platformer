@@ -1,0 +1,74 @@
+SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+S           W                      W                     W                  W                              S
+S           W                      W                     W                  W                              S
+S K         W                      W              SSSSSSSSWSSSS             W                              S
+S           W                      W                                        W                              S
+S           W                      W                                        W                              S
+S           W                      W                                        W                              S
+S      SSSSSSSSSSS                 W                                        WW                             S
+S                                  W                                       SSSW                            S
+S                                  W                                                                       S
+S                                  W                                                                       S
+S                                  W                                                                       S
+S                                  W                                                                       S
+S                              SSSSSSSSS                                                                   S
+S                                                                                                          S
+S                                                                                               S          S
+S                                                                                                          S
+S                                                                                                          S
+S                                                                                                          S
+S                                                                                                          S
+S                                                                                                          S
+S                                                                                                          S
+S                                                                                                         WW
+S                                                                                                        W S
+S                                                                                                          S
+S                                                                                                          S
+S                                                                                                          S
+S                                                                                                          S
+S                                                                                                          S
+S                                                                                                          S
+S                                                                                                          S
+S                                                                                                          S
+S                                                                                                          S
+S                                                                                                          S
+S                                                                                                          S
+S                                                                                                          S
+S                                                                                                          S
+S                                                                                                          W
+S                                                                                                         WS
+S                                                                                                         WS
+S                                                                                                        W S
+S                                                                                                       W  S
+S                                                                                                      W   S
+S                                                                                                     W    S
+S                                                                                                    W     S
+S                                                                                                   W      S
+S                                                                                                  W       S
+S                                                                                       SSSSSSSSSSWSSSSSSSSS
+S                                                                                          S               S
+S                                                                                         SS               S
+S                                                                                         S                S
+S                                                                                         S                S
+S                                                                                         S            S   S
+S                                                                                         S            S   S
+S                                                                                         S            S   S
+S                                                                                         S            S   S
+S                                                                                        SS            S   S
+S                                                                                        S             S   S
+S                                                                                        S             S   S
+S                                                                                        S             S   S
+S                                                                                        S             S   S
+S                                                                                        S             S   S
+S                                                                                       SS             SS  S
+S                                                                                       S              WW  S
+S                                                                                       S               S  S
+S                                                                                       S               S  S
+S                                     SSSSS      SSSSS                                  S               S  S
+S                                   SSSSSSSSS  SSSSSSSSS                                S               W  S
+S                                  SSSSSSSSSSTTSSSSSSSSSS                              WW               S  S
+S P                               SSSSSSSSSSS  SSSSSSSSSSS                             WW               S  S
+S                                 SSSSSSSSSSS  SSSSSSSSSSS                            WW                W CS
+SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS  SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+                                            S ES
+                                            SSSS

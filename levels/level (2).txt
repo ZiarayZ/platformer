@@ -1,0 +1,72 @@
+SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSWSSSSSSSSSSSSSSSWSSSSSSSSSSSSSSSWSSSSSSSSSSSSSSSWSSSSSSSSSSSSSS
+S                          WWWW                W               W               W               W        S   ES
+S                      WW WWWWWW               W               W               W               W        S    S
+S                      WWWW SS WW       TSSSSSSWSSSSSSSSSSSSSSSWSSSSSSSSSSSSSSSWSSSSSSSSSSSSSSSWSSSSSS  S  SSS
+S                       WWWSSSSWW      TST                                                           S  S  S
+S    TTT                 WWSSSSWWW TTTTTT                                                            S  S  S
+S    TCT                 WW SS WWWW                                                                  S  S  S
+S    TTT                  WWWWWW WW                                                                  S  S  S
+S                          WWWW  WW                                                                  S  T  S
+S                                WW                                                                  S  T  S
+S                                WW                                                                  S  T  S
+S                                WW                                                                  S  SSSS
+S                                WW                                                                        S
+S                                WW                                                                        S
+S                                WW                                                                        S
+S                                WW                                                                        S
+S                                WW                                                                        S
+S                                WW                                                                        S
+S                                WW                                                                        S
+S                                WW                                                                        S
+S                                WW                                                                        S
+S                                WW                                                                        S
+S                                WW                                                                        S
+S                                WW                                                                        S
+S                                WW                                                                        S
+S                                WW                                                                        S
+S                                WW                                                                        S
+S                                WW                                                                        S
+S                              WWWW                                                                        S
+S                             WW  W                                                                        S
+S                             S   W                                                                        S
+S                                 W                                                                        S
+S                                 W                                                                        S
+S                                 WW                                                                       S
+S                                  W                                                                       S
+S                                  WW                                                                      S
+S                                   WWS                                                                    S
+S                                                                                                          S
+S                                                                                                          S
+S                                                                                                          S
+S                                                                                                          S
+S                                                                                                          S
+S                                                                                                          S
+S                                                                                                        K S
+S                                                                                                         WS
+S                                                                                                         SS
+S                                                                                                          S
+S                                                           RR                                             S
+S                                                           JJ                                             S
+S                                                          SSSS                                            S
+S                                                         SSSSSS                                           S
+S                                                         SSWWSS                                           S
+S                                                          SWWS                                            S
+S                                                          SWWS                                            S
+S                                                          WWWW                                            S
+S                                                          WWWW                                            S
+S                                                          WWWWW                                           S
+S                                                         WWWWWW                                           S
+S                                                         WWWWWW                                           S
+S                                                         WWWWWW                                           S
+S                                                 SSSSSSSSSSSSWW                                           S
+S                                               SSSSSSSSSSSSSSSS                                           S
+S                                               SSWWWWWWWWWWWWSS                                           S
+S                                                SWWWWWWWWWWWWS                                            S
+S                                                 WWWWWWWWWWWW                                             S
+S                                                 WWWWWWWWWWWW                                             S
+S                                                 WWWWWWWWWWWW                                             S
+S                                                 WWWWWWWWWWWW                                             S
+S                                                 WWWWWWWWWWWW                                             S
+S P                                               WWWWWWWWWWWW                                             S
+S                                                 WWWWWWWWWWWW                                             S
+SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS

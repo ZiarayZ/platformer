@@ -1,0 +1,72 @@
+SSSSSSSSSSSSSSSSSSSSSSSWSSWSSSSSSWSWSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+S                      WWW        WW              S           WWWWWW            S                         KS
+S                     WWW          W              S            WWWWW            S                          S
+S                      WWWS                       S              WW             S                          S
+S                      W  S                       S               W             S                       W WS
+S                      W  SS                      S                             S                       W WS
+S                     WW   S                      S                             S                      WWWWW
+S                     W     S                     S                             W                       W WS
+S                     W                           S                            WWW                     WWWWW
+S                     W                           S                            WWW                      W WS
+S                     W                           S                           WWWWW                    WWWWW
+S                     W                           S                          WWWWWWW                    W WS
+S                     W                           S                           WWWWW                    WWWWW
+S  W                  W                           W                             W                       W WS
+WWW                   W                          WWW                                                   WWWWW
+SW                   WW                          WWW                                                    W WS
+WW                   W                          WWWWW                                                  WWWWW
+SWW                  W                         WWWWWWW                                                  W WS
+S WW                 W                          WWWWW                                          SSSSSSSSSWSWS
+S  WW                W                            W                                                        S
+S   WW              WW                                                                                     S
+S    WW            WW                                                                                      S
+S     WW          WW                                                                                       S
+S      WWSSSSSSSSSS                                                                                        S
+S                                                                                                          S
+S                                                                                                          S
+S                                                                                                          S
+S                                                                                                          S
+S                                                                                                          S
+S                                                                                                          S
+S                                                                                                          S
+S                                                                                                          S
+S                                                                                                          S
+SSSSS                                                                                                     WW
+SWWWWS                                                                                                   WWS
+S    WS                                                                                                 WW S
+S C   WS                                                                                               WW  S
+S     TWS                                                                                             WW   S
+SWW  T  WS                                                                                           WW    S
+SSSST    WS                                                                                         WW     S
+S  SW     WS                                                                                       WW      S
+S   SW    TWS                                                                                     WW       S
+S    SW  T  WS                                                                                   WW        S
+S     SWT    WS                                                                                 WW         S
+S      SW     WS                                                                             WWWWSSSSSSSSSSSSS
+S       SW    TWS                                                                           WSSW            ES
+S        SW  T  WS                                                                       SSWSSWW             S
+S         SWT    WS                                                                  SSSSSSWSWWSSSSSSSSSSSSSSS
+S          SW     WS                                                                       WWW     SS      S
+S           SW    TWS                                                                       WW      SS     S
+S            SW  T  WS                                                                      W        SS    S
+S             SWT    WS                                                                     W         SS   S
+S              SW     WS                                                                    W          SS  S
+S               SW    TWS                                  W SSSSS                                      SS S
+S                SW  T  WS                                WSSSSSSSSS                                     SSS
+S                 SWT    WS                             WWSSSSSSSSSSS                                     SS
+S                  SW     WS                            SSSSSSSSSSSSSSS                                    S
+S                   SW    TWS                          SSSSSSSSSSSSSSSS                                    S
+S                    SW  T  WS                        SSSSSSSSSSSSSSSSSS                                   S
+S                     SWT    WS                       SSSSSSSSSSSSSSSSSS                                   S
+S                      SW     WS                      SSSSSWWWWWWWWSSSSS                                   S
+S                       SW    TWS                      SSSSSWWWWWWSSSSSS                                   S
+S                        SW  T  WS                      SSS  WWWW    SS                                    S
+S                         SWT    WS                          WWWW                                          S
+S                          SW     WS                         WWWW                                          S
+S                           SW    TWS                        WWWW                                          S
+S                            SW  T  WS                       WWWW                                          S
+S                             SWT    WS                      WWWW                                          S
+S                              SW     WS                WW   WWWWW           WW                            S
+S P                            WW     WW                 W   WWWWWWW        WW                             S
+S                              WW     WW                 W  WWWWWW WW       W                              S
+SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSWSSSSSSSWSSSSSSSSSSSSSSSSSWSSWSSWSSSSWSSSSSSSWSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS

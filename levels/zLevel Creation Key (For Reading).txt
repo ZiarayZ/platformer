@@ -1,0 +1,31 @@
+\**/
+P = Player starting location
+S = Blocks objects collide with
+W = Background wall that objects can jump off
+C = Coin, unlocks new colours, one per level
+K = Key, unlocks doors, one per level
+T = Doors, like S but can be removed by collecting the key
+J = Jump pad, gives an increase to jump height
+R = Run pad, gives increased speed that gradually decreases
+H = Horizontal moving enemy, kills player
+V = Vertical moving enemy, kills player
+E = Escape, where player has to get to
+
+
+ENEMIES SEND PLAYER TO BOTTOM LEFT CORNER OF LEVEL
+RUN PADS ARE ALWAYS TO BE PLACED ON TOP OF JUMP PADS
+ESCAPE IS USUALLY OUTSIDE THE MAP ON MOST MAPS
+/**\
+
+
+Background(LightBlue)
+S(Green)
+W(Brown)
+C(Gold)
+K(Black)
+T(Grey)
+J(Blue)
+R(Pink)
+H(Random,Changes/mS)
+V(Random,Changes/mS)
+E(Red)
