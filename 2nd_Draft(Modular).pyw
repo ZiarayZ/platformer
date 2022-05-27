@@ -1,6 +1,6 @@
 from game_player import Player
 from game_enemies import EnemyV, EnemyH
-from game_objects import Wall, Surface, Door, Jump, Run
+from game_objects import Box, Pad
 from random import randint,choice
 import pygame
 import os
@@ -44,9 +44,9 @@ with open("levels/1main_menu.txt","r") as f:
                 player.rect.x = x
                 player.rect.y = y
             if col.upper() == "T":#T - Door
-                doors.append(Door(x,y))
+                doors.append(Box(x,y,"Door"))
             if col.upper() == "S":#S - Surface
-                surfaces.append(Surface(x,y))
+                surfaces.append(Box(x,y,"Surface"))
             if col.upper() == "X":#X - Exit
                 Exit = pygame.Rect(x,y,10,10)
             if col.upper() == "E":#E - Start
@@ -118,9 +118,9 @@ with open("levels/level ("+str(levelTurn)+").txt","r") as f:
     for row in f:
         for col in row:
             if col.upper() == "W":#W - Wall
-                walls.append(Wall(x,y))
+                walls.append(Box(x,y,"Wall"))
             if col.upper() == "S":#S - Surface
-                surfaces.append(Surface(x,y))
+                surfaces.append(Box(x,y,"Surface"))
             if col.upper() == "E":#E - Escape
                 end_rect = pygame.Rect(x,y,10,10)
             if col.upper() == "P":#P - Player
@@ -129,11 +129,11 @@ with open("levels/level ("+str(levelTurn)+").txt","r") as f:
             if col.upper() == "C":#C - Coin/Currency
                 coin = pygame.Rect(x+3,y+3,5,5)
             if col.upper() == "J":#J - Jump Pad
-                jumps.append(Jump(x,y))
+                jumps.append(Pad(x,y,"Jump"))
             if col.upper() == "R":#R - Speed Pad
-                runs.append(Run(x,y))
+                runs.append(Pad(x,y,"Run"))
             if col.upper() == "T":#T - Door
-                doors.append(Door(x,y))
+                doors.append(Box(x,y,"Door"))
             if col.upper() == "K":#K - Key
                 key = pygame.Rect(x,y+2,10,6)
             x+=10
@@ -275,9 +275,9 @@ while secondRunning:
                for row in f:
                    for col in row:
                        if col.upper() == "W":#W - Wall
-                           walls.append(Wall(x,y))
+                           walls.append(Box(x,y,"Wall"))
                        if col.upper() == "S":#S - Surface
-                           surfaces.append(Surface(x,y))
+                           surfaces.append(Box(x,y,"Surface"))
                        if col.upper() == "E":#E - Escape
                            end_rect = pygame.Rect(x,y,10,10)
                        if col.upper() == "P":#P - Player
@@ -286,11 +286,11 @@ while secondRunning:
                        if col.upper() == "C":#C - Coin/Currency
                            coin = pygame.Rect(x+3,y+3,5,5)
                        if col.upper() == "J":#J - Jump Pad
-                           jumps.append(Jump(x,y))
+                           jumps.append(Pad(x,y,"Jump"))
                        if col.upper() == "R":#R - Speed Pad
-                           runs.append(Run(x,y))
+                           runs.append(Pad(x,y,"Run"))
                        if col.upper() == "T":#T - Door
-                           doors.append(Door(x,y))
+                           doors.append(Box(x,y,"Door"))
                        if col.upper() == "K":#K - Key
                            key = pygame.Rect(x,y+2,10,6)
                        x+=10
