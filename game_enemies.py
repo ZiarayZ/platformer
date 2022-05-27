@@ -1,3 +1,6 @@
+from random import randint,choice
+import pygame
+
 class EnemyH(object):
 
     def __init__(self,wx,wy,surfaces,doors):
