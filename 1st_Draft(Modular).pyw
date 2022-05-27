@@ -1,4 +1,6 @@
-from game_objects import *
+from game_player import Player
+from game_enemies import EnemyV, EnemyH
+from game_objects import Wall, Surface, Door, Jump, Run
 from random import randint,choice
 import pygame
 import os
