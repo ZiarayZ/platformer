@@ -11,9 +11,6 @@ class Box(object):
         elif version == "Door": #Foreground, Collidable
             self.colour = (randint(120,130),randint(120,130),randint(120,130))
 
-    def reset_self(self):
-        self.active = False
-
 class Pad(object):
     def __init__(self,wx,wy,version="Jump"):
         if version == "Jump":
@@ -23,6 +20,3 @@ class Pad(object):
             editVal = 16
             self.colour = (255,128,100)
         self.rect = pygame.Rect(wx,wy+editVal,10,2)
-     
-    def reset_self(self):
-        self.active = False
