@@ -289,9 +289,13 @@ while secondRunning:
     if player.rect.colliderect(coin):
         atuple = (randint(0,255),randint(0,255),randint(0,255))
         player_colour.append(atuple)
+        pygame.draw.rect(screen,(204,255,255),coin)#Draw Coin/Currency
         coin = pygame.Rect(1000,1000,5,5)
 
     if player.rect.colliderect(key):
+        for door in doors:
+            pygame.draw.rect(screen,(204,255,255),door.rect)#Draw Doors
+        pygame.draw.rect(screen,(204,255,255),key)#Draw Key
         del doors[:]
         key = pygame.Rect(1000,1002,10,6)
 
