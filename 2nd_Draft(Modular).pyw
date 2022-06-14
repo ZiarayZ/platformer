@@ -1,192 +1,9 @@
+from game_player import Player
+from game_enemies import EnemyV, EnemyH
+from game_objects import Box, Pad
 from random import randint,choice
 import pygame
 import os
-
-#Has to be referenced before some classes
-l=0
-g=0
-deaths=0
-
-class Player(object):
-
-    def __init__(self):
-        self.rect = pygame.Rect(50,50,20,20) #Location and size
-        self.onGround=True #Defining player variables
-        self.onWall=True
-        self.onJump=False
-        self.onRun=False
-        self.colour=[(0,0,0)]
-
-    def move(self,dx,dy):
-        if dx != 0:
-            self.move_single_axis(dx,0)
-
-        if dy != 0:
-            self.move_single_axis(0,dy)
-
-    def move_single_axis(self,dx,dy):
-        global l
-        global g
-        self.rect.x += dx
-        self.rect.y += dy
-
-        for surface in surfaces:
-            if self.rect.colliderect(surface.rect):#Collide with Surfaces
-                if dx > 0:
-                    self.rect.right = surface.rect.left
-                if dx < 0:
-                    self.rect.left = surface.rect.right
-                if dy > 0:
-                    self.rect.bottom = surface.rect.top
-                    self.onGround=True #So that player can jump again
-                    l = 0#Helps stop glitches from falling from great heights
-                if dy < 0:
-                    self.rect.top = surface.rect.bottom
-                    g = 0
-
-        for door in doors:
-            if self.rect.colliderect(door.rect):#Collide with Surfaces
-                if dx > 0:
-                    self.rect.right = door.rect.left
-                if dx < 0:
-                    self.rect.left = door.rect.right
-                if dy > 0:
-                    self.rect.bottom = door.rect.top
-                    self.onGround=True #So that player can jump again
-                    l = 0#Helps stop glitches from falling from great heights
-                if dy < 0:
-                    self.rect.top = door.rect.bottom
-                    g = 0
-
-        for wall in walls:
-            if self.rect.colliderect(wall.rect):#Checking if player is touching a wall
-                self.onWall=True
-
-        for jump in jumps:
-            if self.rect.colliderect(jump.rect):#Checking if on jump pad
-                self.onJump=True
-
-        for run in runs:
-            if self.rect.colliderect(run.rect):
-                self.onRun=True
-
-class EnemyH(object):
-
-    def __init__(self,wx,wy):
-        enemiesH.append(self)
-        self.rect = pygame.Rect(wx,wy,10,10) #Location and size
-        self.direction = choice(["left","right"])
-        self.speed = randint(3,7)
-
-    def move(self,dx,dy):
-        if dx != 0:
-            self.move_single_axis(dx,0)
-
-    def move_single_axis(self,dx,dy):
-        global deaths
-        global l
-        self.rect.x += dx
-
-        if self.rect.colliderect(player.rect):
-            player.rect.x = 10
-            player.rect.y = 690
-            deaths += 1
-            l = 0
-        
-        for surface in surfaces:
-            if self.rect.colliderect(surface.rect):#Collide with Surfaces
-                if dx > 0:
-                    self.direction = "right"
-                if dx < 0:
-                    self.direction = "left"
-        for door in doors:
-            if self.rect.colliderect(door.rect):#Collide with Doors
-                if dx > 0:
-                    self.direction = "right"
-                if dx < 0:
-                    self.direction = "left"
-
-class EnemyV(object):
-
-    def __init__(self,wx,wy):
-        enemiesV.append(self)
-        self.rect = pygame.Rect(wx,wy,10,10) #Location and size
-        self.direction = choice(["up","down"])
-        self.speed = randint(3,5)
-
-    def move(self,dx,dy):
-        if dy != 0:
-            self.move_single_axis(0,dy)
-
-    def move_single_axis(self,dx,dy):
-        global l
-        global deaths
-        self.rect.y += dy
-
-        if self.rect.colliderect(player.rect):
-            player.rect.x = 10
-            player.rect.y = 690
-            deaths += 1
-            l = 0
-        
-        for surface in surfaces:
-            if self.rect.colliderect(surface.rect):#Collide with Surfaces
-                if dy > 0:
-                    self.direction = "down"
-                if dy < 0:
-                    self.direction = "up"
-        for door in doors:
-            if self.rect.colliderect(door.rect):#Collide with Doors
-                if dy > 0:
-                    self.direction = "down"
-                if dy < 0:
-                    self.direction = "up"
-
-#Walls/Platforms and Spikes
-class Wall(object):
-    def __init__(self,wx,wy): #Background,Climbable
-        walls.append(self)
-        self.rect = pygame.Rect(wx,wy,10,10)
-        self.colour = (randint(130,150),randint(60,80),randint(10,30))
-
-    def reset_wall(self):
-        self.active = False
-
-class Surface(object):
-    def __init__(self,wx,wy): #Foreground,Collidable
-        surfaces.append(self)
-        self.rect = pygame.Rect(wx,wy,10,10)
-        self.colour = (randint(0,20),randint(90,110),randint(0,20))
-
-    def reset_surface(self):
-        self.active = False
-
-class Door(object):
-    def __init__(self,wx,wy): #Foreground,Collidable
-        doors.append(self)
-        self.rect = pygame.Rect(wx,wy,10,10)
-        self.colour = (randint(120,130),randint(120,130),randint(120,130))
-
-    def reset_door(self):
-        self.active = False
-
-class Jump(object):
-    def __init__(self,wx,wy):
-        jumps.append(self)
-        self.rect = pygame.Rect(wx,wy+8,10,2)
-        self.colour = (100,128,255)
-
-    def reset_jump(self):
-        self.active = False
-
-class Run(object):
-    def __init__(self,wx,wy):
-        runs.append(self)
-        self.rect = pygame.Rect(wx,wy+16,10,2)
-        self.colour = (255,128,100)
-
-    def reset_run(self):
-        self.active = False
 
 #Variables
 walls = []
@@ -196,8 +13,9 @@ runs = []
 doors = []
 enemiesH = []
 enemiesV = []
-player = Player() #Create a player object from class
-p_colour = player.colour[0]
+player = Player(walls,surfaces,jumps,runs,doors,10,690) #Create a player object from class
+player_colour = [(0,0,0)]
+p_colour = player_colour[0]
 speed = 5
 turn = 0
 g=0 #Created 2 variables for gravity as it gets extremely complicated to use only one
@@ -226,9 +44,9 @@ with open("levels/1main_menu.txt","r") as f:
                 player.rect.x = x
                 player.rect.y = y
             if col.upper() == "T":#T - Door
-                Door(x,y)
+                doors.append(Box(x,y,"Door"))
             if col.upper() == "S":#S - Surface
-                Surface(x,y)
+                surfaces.append(Box(x,y,"Surface"))
             if col.upper() == "X":#X - Exit
                 Exit = pygame.Rect(x,y,10,10)
             if col.upper() == "E":#E - Start
@@ -238,6 +56,7 @@ with open("levels/1main_menu.txt","r") as f:
             x += 10
         y += 10
         x = 0
+    player = Player(walls,surfaces,jumps,runs,doors,player.rect.x,player.rect.y)
             
 #Loop Main Menu
 while firstRunning:
@@ -252,17 +71,17 @@ while firstRunning:
 
     if user_input[pygame.K_UP]:
         player.onGround = True
-        player.move(0,-5) #Move up
+        player.move(0,-5,l,g) #Move up
 
     if user_input[pygame.K_DOWN]:
         player.onGround = True
-        player.move(0,5) #Move down
+        player.move(0,5,l,g) #Move down
 
     if user_input[pygame.K_LEFT]:
-        player.move(-5,0) #Move left
+        player.move(-5,0,l,g) #Move left
 
     if user_input[pygame.K_RIGHT]:
-        player.move(5,0) #Move right
+        player.move(5,0,l,g) #Move right
 
     if player.rect.colliderect(key):
         del doors[:]
@@ -293,15 +112,15 @@ while firstRunning:
 
 
 #Generate Level
-levelTurn=6
+levelTurn=1
 y=x=0
 with open("levels/level ("+str(levelTurn)+").txt","r") as f:
     for row in f:
         for col in row:
             if col.upper() == "W":#W - Wall
-                Wall(x,y)
+                walls.append(Box(x,y,"Wall"))
             if col.upper() == "S":#S - Surface
-                Surface(x,y)
+                surfaces.append(Box(x,y,"Surface"))
             if col.upper() == "E":#E - Escape
                 end_rect = pygame.Rect(x,y,10,10)
             if col.upper() == "P":#P - Player
@@ -310,20 +129,35 @@ with open("levels/level ("+str(levelTurn)+").txt","r") as f:
             if col.upper() == "C":#C - Coin/Currency
                 coin = pygame.Rect(x+3,y+3,5,5)
             if col.upper() == "J":#J - Jump Pad
-                Jump(x,y)
+                jumps.append(Pad(x,y,"Jump"))
             if col.upper() == "R":#R - Speed Pad
-                Run(x,y)
+                runs.append(Pad(x,y,"Run"))
             if col.upper() == "T":#T - Door
-                Door(x,y)
+                doors.append(Box(x,y,"Door"))
             if col.upper() == "K":#K - Key
                 key = pygame.Rect(x,y+2,10,6)
-            if col.upper() == "H":#H - Horizontal Moving Enemy
-                EnemyH(x,y)
-            if col.upper() == "V":#V - Vertical Moving Enemy
-                EnemyV(x,y)
             x+=10
         y+=10
         x=0
+    player = Player(walls,surfaces,jumps,runs,doors,player.rect.x,player.rect.y)
+y=x=0
+with open("levels/level ("+str(levelTurn)+").txt","r") as f:
+    for row in f:
+        for col in row:
+            if col.upper() == "H":#H - Horizontal Moving Enemy
+                enemiesH.append(EnemyH(x,y,surfaces,doors))
+            if col.upper() == "V":#V - Vertical Moving Enemy
+                enemiesV.append(EnemyV(x,y,surfaces,doors))
+            x+=10
+        y+=10
+        x=0
+
+#Incase in the main menu the user closes the window
+try:
+    if secondRunning:
+        pass
+except NameError:
+    secondRunning = False
 
 #Loop game
 while secondRunning:
@@ -334,20 +168,26 @@ while secondRunning:
             secondRunning = False
 
         if (event.type == pygame.KEYDOWN) and (event.key == pygame.K_SPACE):
-            turns = len(player.colour)
+            turns = len(player_colour)
             turn += 1
             if turn == turns:
                 turn = 0
-            p_colour = player.colour[turn]
+            p_colour = player_colour[turn]
 
     #AI movement
     for enemy in enemiesH:
+        if enemy.rect.colliderect(player.rect):
+            player.rect.x = 10
+            player.rect.y = 690
         if enemy.direction == "left":
             enemy.move(enemy.speed,0)
         if enemy.direction == "right":
             enemy.move(-enemy.speed,0)
 
     for enemy in enemiesV:
+        if enemy.rect.colliderect(player.rect):
+            player.rect.x = 10
+            player.rect.y = 690
         if enemy.direction == "up":
             enemy.move(0,enemy.speed)
         if enemy.direction == "down":
@@ -364,26 +204,29 @@ while secondRunning:
         else:
             g=15
         player.onJump = False
-        player.move(0,-g)
+        player.move(0,-g,l,g)
 
     elif player.onGround==False: #Being pulled back down
-        player.move(0,-g)
+        player.move(0,-g,l,g)
+        if player.g == 0:
+            g = 0
         g -= 1
 
     else:
         l+= 1
         playerLOC=player.rect.y #Pulling player down when not on surface
-        player.move(0,l)
+        player.move(0,l,l,g)
+        l = player.l
 
         if playerLOC==player.rect.y:#Checking to see if player is on a surface
-            l=0
+            l=player.l=0
 
         else:
             player.onWall=False
 
     if player.rect.y > height:
         player.rect.y = 690
-        l=0
+        l=player.l=0
 
     if user_input[pygame.K_LEFT]:
         if player.onRun and speed == 5:
@@ -391,7 +234,7 @@ while secondRunning:
             player.onRun=False
         elif speed > 5:
             speed -= 1
-        player.move(-speed,0) #Move left
+        player.move(-speed,0,l,g) #Move left
 
     if user_input[pygame.K_RIGHT]:
         if player.onRun and speed == 5:
@@ -399,17 +242,16 @@ while secondRunning:
             player.onRun=False
         elif speed > 5:
             speed -= 1
-        player.move(speed,0) #Move right
+        player.move(speed,0,l,g) #Move right
 
     if user_input[pygame.K_BACKSPACE]:
         player.rect.y = 690
         player.rect.x = 10
-        l = 0
-        g = 0
+        l=player.l=g=player.g=0
 
     if player.rect.colliderect(coin):
         atuple = (randint(0,255),randint(0,255),randint(0,255))
-        player.colour.append(atuple)
+        player_colour.append(atuple)
         coin = pygame.Rect(1000,1000,5,5)
 
     if player.rect.colliderect(key):
@@ -433,31 +275,39 @@ while secondRunning:
                for row in f:
                    for col in row:
                        if col.upper() == "W":#W - Wall
-                            Wall(x,y)
+                           walls.append(Box(x,y,"Wall"))
                        if col.upper() == "S":#S - Surface
-                           Surface(x,y)
+                           surfaces.append(Box(x,y,"Surface"))
                        if col.upper() == "E":#E - Escape
                            end_rect = pygame.Rect(x,y,10,10)
                        if col.upper() == "P":#P - Player
                            player.rect.x = x
                            player.rect.y = y
                        if col.upper() == "C":#C - Coin/Currency
-                           coin = pygame.Rect(x+3,y+3,4,4)
+                           coin = pygame.Rect(x+3,y+3,5,5)
                        if col.upper() == "J":#J - Jump Pad
-                           Jump(x,y)
+                           jumps.append(Pad(x,y,"Jump"))
                        if col.upper() == "R":#R - Speed Pad
-                           Run(x,y)
+                           runs.append(Pad(x,y,"Run"))
                        if col.upper() == "T":#T - Door
-                           Door(x,y)
+                           doors.append(Box(x,y,"Door"))
                        if col.upper() == "K":#K - Key
-                           key = pygame.Rect(x,y+2,10,4)
-                       if col.upper() == "H":#H - Horizontal Moving Enemy
-                           EnemyH(x,y)
-                       if col.upper() == "V":#V - Vertical Moving Enemy
-                           EnemyV(x,y)
+                           key = pygame.Rect(x,y+2,10,6)
                        x+=10
                    y+=10
                    x=0
+           y=x=0
+           with open("levels/level ("+str(levelTurn)+").txt","r") as f:
+               for row in f:
+                   for col in row:
+                       if col.upper() == "H":#H - Horizontal Moving Enemy
+                           enemiesH.append(EnemyH(x,y,surfaces,doors))
+                       if col.upper() == "V":#V - Vertical Moving Enemy
+                           enemiesV.append(EnemyV(x,y,surfaces,doors))
+                       x+=10
+                   y+=10
+                   x=0
+               player = Player(walls,surfaces,jumps,runs,doors,player.rect.x,player.rect.y)
 
        except IOError:
            secondRunning = False
