@@ -151,6 +151,23 @@ with open("levels/level ("+str(levelTurn)+").txt","r") as f:
             x+=10
         y+=10
         x=0
+    #Recreating the screen
+    screen.fill((204,255,255)) #Fill screen, light blue
+
+    for surface in surfaces:
+        pygame.draw.rect(screen,surface.colour,surface.rect)#Draw Foreground blocks onto screen
+
+    for door in doors:
+        pygame.draw.rect(screen,door.colour,door.rect)#Draw Doors
+
+    for wall in walls:
+        pygame.draw.rect(screen,wall.colour,wall.rect)#Draw background blocks onto screen
+
+    for jump in jumps:
+        pygame.draw.rect(screen,jump.colour,jump.rect)#Draw Jump Pads
+
+    for run in runs:
+        pygame.draw.rect(screen,run.colour,run.rect)#Draw Speed Pads
 
 #Incase in the main menu the user closes the window
 try:
@@ -173,6 +190,26 @@ while secondRunning:
             if turn == turns:
                 turn = 0
             p_colour = player_colour[turn]
+
+    for enemy in enemiesH:
+        pygame.draw.rect(screen,(204,255,255),enemy.rect)#Erase horizontal moving enemies
+
+    for enemy in enemiesV:
+        pygame.draw.rect(screen,(204,255,255),enemy.rect)#Erase vertical moving enemies
+
+    pygame.draw.rect(screen,(204,255,255),player.rect)#Erase Player
+
+    for wall in walls:
+        if player.rect.colliderect(wall.rect):
+            pygame.draw.rect(screen,wall.colour,wall.rect)#Draw background blocks onto screen
+
+    for jump in jumps:
+        if player.rect.colliderect(jump.rect):
+            pygame.draw.rect(screen,jump.colour,jump.rect)#Draw Jump Pads
+
+    for run in runs:
+        if player.rect.colliderect(run.rect):
+            pygame.draw.rect(screen,run.colour,run.rect)#Draw Speed Pads
 
     #AI movement
     for enemy in enemiesH:
@@ -259,77 +296,76 @@ while secondRunning:
         key = pygame.Rect(1000,1002,10,6)
 
     if player.rect.colliderect(end_rect):
-       del walls[:]
-       del surfaces[:] #End of a level, reconstruction
-       del jumps[:]
-       del runs[:]
-       del doors[:]
-       del enemiesH[:]
-       del enemiesV[:]
-       
-       levelTurn+=1
+        del walls[:]
+        del surfaces[:] #End of a level, reconstruction
+        del jumps[:]
+        del runs[:]
+        del doors[:]
+        del enemiesH[:]
+        del enemiesV[:]
 
-       y=x=0
-       try:#When all levels are complete, throws error
-           with open("levels/level ("+str(levelTurn)+").txt","r") as f:
-               for row in f:
-                   for col in row:
-                       if col.upper() == "W":#W - Wall
-                           walls.append(Box(x,y,"Wall"))
-                       if col.upper() == "S":#S - Surface
-                           surfaces.append(Box(x,y,"Surface"))
-                       if col.upper() == "E":#E - Escape
-                           end_rect = pygame.Rect(x,y,10,10)
-                       if col.upper() == "P":#P - Player
-                           player.rect.x = x
-                           player.rect.y = y
-                       if col.upper() == "C":#C - Coin/Currency
-                           coin = pygame.Rect(x+3,y+3,5,5)
-                       if col.upper() == "J":#J - Jump Pad
-                           jumps.append(Pad(x,y,"Jump"))
-                       if col.upper() == "R":#R - Speed Pad
-                           runs.append(Pad(x,y,"Run"))
-                       if col.upper() == "T":#T - Door
-                           doors.append(Box(x,y,"Door"))
-                       if col.upper() == "K":#K - Key
-                           key = pygame.Rect(x,y+2,10,6)
-                       x+=10
-                   y+=10
-                   x=0
-           y=x=0
-           with open("levels/level ("+str(levelTurn)+").txt","r") as f:
-               for row in f:
-                   for col in row:
-                       if col.upper() == "H":#H - Horizontal Moving Enemy
-                           enemiesH.append(EnemyH(x,y,surfaces,doors))
-                       if col.upper() == "V":#V - Vertical Moving Enemy
-                           enemiesV.append(EnemyV(x,y,surfaces,doors))
-                       x+=10
-                   y+=10
-                   x=0
-               player = Player(walls,surfaces,jumps,runs,doors,player.rect.x,player.rect.y)
+        levelTurn+=1
 
-       except IOError:
-           secondRunning = False
-           break
+        y=x=0
+        try:#When all levels are complete, throws error
+            with open("levels/level ("+str(levelTurn)+").txt","r") as f:
+                for row in f:
+                    for col in row:
+                        if col.upper() == "W":#W - Wall
+                            walls.append(Box(x,y,"Wall"))
+                        if col.upper() == "S":#S - Surface
+                            surfaces.append(Box(x,y,"Surface"))
+                        if col.upper() == "E":#E - Escape
+                            end_rect = pygame.Rect(x,y,10,10)
+                        if col.upper() == "P":#P - Player
+                            player.rect.x = x
+                            player.rect.y = y
+                        if col.upper() == "C":#C - Coin/Currency
+                            coin = pygame.Rect(x+3,y+3,5,5)
+                        if col.upper() == "J":#J - Jump Pad
+                            jumps.append(Pad(x,y,"Jump"))
+                        if col.upper() == "R":#R - Speed Pad
+                            runs.append(Pad(x,y,"Run"))
+                        if col.upper() == "T":#T - Door
+                            doors.append(Box(x,y,"Door"))
+                        if col.upper() == "K":#K - Key
+                            key = pygame.Rect(x,y+2,10,6)
+                        x+=10
+                    y+=10
+                    x=0
+            y=x=0
+            with open("levels/level ("+str(levelTurn)+").txt","r") as f:
+                for row in f:
+                    for col in row:
+                        if col.upper() == "H":#H - Horizontal Moving Enemy
+                            enemiesH.append(EnemyH(x,y,surfaces,doors))
+                        if col.upper() == "V":#V - Vertical Moving Enemy
+                            enemiesV.append(EnemyV(x,y,surfaces,doors))
+                        x+=10
+                    y+=10
+                    x=0
+                player = Player(walls,surfaces,jumps,runs,doors,player.rect.x,player.rect.y)
+                #Recreating the screen
+                screen.fill((204,255,255)) #Fill screen, light blue
 
-    #Recreating the screen
-    screen.fill((204,255,255)) #Fill screen, light blue
+                for surface in surfaces:
+                    pygame.draw.rect(screen,surface.colour,surface.rect)#Draw Foreground blocks onto screen
 
-    for wall in walls:
-        pygame.draw.rect(screen,wall.colour,wall.rect)#Draw background blocks onto screen
+                for door in doors:
+                    pygame.draw.rect(screen,door.colour,door.rect)#Draw Doors
 
-    for surface in surfaces:
-        pygame.draw.rect(screen,surface.colour,surface.rect)#Draw Foreground blocks onto screen
+                for wall in walls:
+                    pygame.draw.rect(screen,wall.colour,wall.rect)#Draw background blocks onto screen
 
-    for jump in jumps:
-        pygame.draw.rect(screen,jump.colour,jump.rect)#Draw Jump Pads
+                for jump in jumps:
+                    pygame.draw.rect(screen,jump.colour,jump.rect)#Draw Jump Pads
 
-    for run in runs:
-        pygame.draw.rect(screen,run.colour,run.rect)#Draw Speed Pads
+                for run in runs:
+                    pygame.draw.rect(screen,run.colour,run.rect)#Draw Speed Pads
 
-    for door in doors:
-        pygame.draw.rect(screen,door.colour,door.rect)#Draw Doors
+        except IOError:
+            secondRunning = False
+            break
 
     for enemy in enemiesH:
         pygame.draw.rect(screen,(randint(0,255),randint(0,255),randint(0,255)),enemy.rect)#Draw horizontal moving enemies
