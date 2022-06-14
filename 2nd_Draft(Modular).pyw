@@ -199,17 +199,19 @@ while secondRunning:
 
     pygame.draw.rect(screen,(204,255,255),player.rect)#Erase Player
 
-    for wall in walls:
-        if player.rect.colliderect(wall.rect):
-            pygame.draw.rect(screen,wall.colour,wall.rect)#Draw background blocks onto screen
+    for enemies in [enemiesH,enemiesV]:
+        for enemy in enemies:
+            for wall in walls:
+                if player.rect.colliderect(wall.rect) or enemy.rect.colliderect(wall.rect):
+                    pygame.draw.rect(screen,wall.colour,wall.rect)#Draw background blocks onto screen
 
-    for jump in jumps:
-        if player.rect.colliderect(jump.rect):
-            pygame.draw.rect(screen,jump.colour,jump.rect)#Draw Jump Pads
+            for jump in jumps:
+                if player.rect.colliderect(jump.rect) or enemy.rect.colliderect(jump.rect):
+                    pygame.draw.rect(screen,jump.colour,jump.rect)#Draw Jump Pads
 
-    for run in runs:
-        if player.rect.colliderect(run.rect):
-            pygame.draw.rect(screen,run.colour,run.rect)#Draw Speed Pads
+            for run in runs:
+                if player.rect.colliderect(run.rect) or enemy.rect.colliderect(run.rect):
+                    pygame.draw.rect(screen,run.colour,run.rect)#Draw Speed Pads
 
     #AI movement
     for enemy in enemiesH:
